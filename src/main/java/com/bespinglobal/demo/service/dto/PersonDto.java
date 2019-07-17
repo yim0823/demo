@@ -1,6 +1,6 @@
 package com.bespinglobal.demo.service.dto;
 
-import com.bespinglobal.demo.domain.Person;
+import com.bespinglobal.demo.jpa.domain.Person;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 

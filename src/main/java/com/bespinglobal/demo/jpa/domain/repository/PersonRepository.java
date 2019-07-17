@@ -1,6 +1,6 @@
-package com.bespinglobal.demo.repository;
+package com.bespinglobal.demo.jpa.domain.repository;
 
-import com.bespinglobal.demo.domain.Person;
+import com.bespinglobal.demo.jpa.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

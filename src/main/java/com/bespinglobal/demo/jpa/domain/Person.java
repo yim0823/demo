@@ -1,4 +1,4 @@
-package com.bespinglobal.demo.domain;
+package com.bespinglobal.demo.jpa.domain;
 
 import javax.persistence.*;
 
