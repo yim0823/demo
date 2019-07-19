@@ -1,6 +1,6 @@
-package com.bespinglobal.demo.service.dto;
+package com.bespinglobal.demo.dto;
 
-import com.bespinglobal.demo.jpa.domain.Person;
+import com.bespinglobal.demo.repositories.jpa.domain.Person;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.is;
 
 /**
  * Project : demo
- * Class : com.bespinglobal.demo.service.dto.PersonDtoTest
+ * Class : PersonDtoTest
  * Version :
  * Created by taehyoung.yim on 2019-07-16.
  * *** 저작권 주의 ***

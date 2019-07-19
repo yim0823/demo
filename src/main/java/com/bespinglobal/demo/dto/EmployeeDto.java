@@ -1,6 +1,6 @@
-package com.bespinglobal.demo.service.dto;
+package com.bespinglobal.demo.dto;
 
-import com.bespinglobal.demo.cassandra.domain.Employee;
+import com.bespinglobal.demo.repositories.cassandra.domain.Employee;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Project : demo
- * Class : com.bespinglobal.demo.service.dto.EmployeeDto
+ * Class : EmployeeDto
  * Version : 2019.07.17 v0.1
  * Created by taehyoung.yim on 2019-07-17.
  * *** 저작권 주의 ***
@@ -21,6 +21,8 @@ public class EmployeeDto {
     public static class Create {
 
         @NotEmpty
+        private String id;
+        @NotEmpty
         private String firstName;
         @NotEmpty
         private String lastName;
@@ -29,6 +31,7 @@ public class EmployeeDto {
 
         public Employee toEntity() {
             return Employee.builder()
+                    .id(id)
                     .firstName(firstName)
                     .lastName(lastName)
                     .email(email)
@@ -55,13 +58,13 @@ public class EmployeeDto {
     @Getter
     public static class Response {
 
-        private Long id;
+        private String id;
         private String firstName;
         private String lastName;
         private String email;
 
         @Builder
-        public Response(Long id, String firstName, String lastName, String email) {
+        public Response(String id, String firstName, String lastName, String email) {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;

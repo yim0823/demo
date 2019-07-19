@@ -1,7 +1,7 @@
 package com.bespinglobal.demo.controller;
 
 import com.bespinglobal.demo.service.PersonService;
-import com.bespinglobal.demo.service.dto.PersonDto;
+import com.bespinglobal.demo.dto.PersonDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

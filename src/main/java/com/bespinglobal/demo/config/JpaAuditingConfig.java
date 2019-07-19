@@ -20,7 +20,7 @@ import java.util.Optional;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.bespinglobal.demo.repository",
+        basePackages = "com.bespinglobal.demo.repositories.jpa.repository",
         repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 @EnableJpaAuditing(auditorAwareRef = "auditorProvider") // JPA Auditing - Common Entity 의 생성시간, 수정시간 자동화
 public class JpaAuditingConfig {

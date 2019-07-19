@@ -1,9 +1,9 @@
 package com.bespinglobal.demo.service;
 
-import com.bespinglobal.demo.jpa.domain.Person;
+import com.bespinglobal.demo.repositories.jpa.domain.Person;
 import com.bespinglobal.demo.exception.NotFoundException;
-import com.bespinglobal.demo.jpa.domain.repository.PersonRepository;
-import com.bespinglobal.demo.service.dto.PersonDto;
+import com.bespinglobal.demo.repositories.jpa.repository.PersonRepository;
+import com.bespinglobal.demo.dto.PersonDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

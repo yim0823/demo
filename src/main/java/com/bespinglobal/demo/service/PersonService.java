@@ -1,10 +1,10 @@
 package com.bespinglobal.demo.service;
 
-import com.bespinglobal.demo.jpa.domain.Person;
 import com.bespinglobal.demo.exception.NotFoundException;
-import com.bespinglobal.demo.jpa.domain.repository.PersonRepository;
-import com.bespinglobal.demo.service.dto.PersonDto;
-import lombok.RequiredArgsConstructor;
+import com.bespinglobal.demo.repositories.jpa.domain.Person;
+import com.bespinglobal.demo.repositories.jpa.repository.PersonRepository;
+import com.bespinglobal.demo.dto.PersonDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,10 +19,14 @@ import java.util.stream.Collectors;
  * *** 저작권 주의 ***
  */
 @Service
-@RequiredArgsConstructor
 public class PersonService {
 
-    private final PersonRepository personRepository;
+    private PersonRepository personRepository;
+
+    @Autowired
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     public List<PersonDto.Response> findAll() {
         return personRepository.findAll().stream()

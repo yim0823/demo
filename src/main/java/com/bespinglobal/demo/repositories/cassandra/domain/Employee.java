@@ -1,15 +1,15 @@
-package com.bespinglobal.demo.cassandra.domain;
+package com.bespinglobal.demo.repositories.cassandra.domain;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NonNull;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
  * Project : demo
- * Class : com.bespinglobal.demo.cassandra.domain.Employee
+ * Class : Employee
  * Version : 2019.07.17 v0.1
  * Created by taehyoung.yim on 2019-07-17.
  * *** 저작권 주의 ***
@@ -19,20 +19,21 @@ import javax.persistence.Table;
 public class Employee {
 
     @PrimaryKey
-    private Long id;
+    private String id;
 
-    @NonNull
+    @Column
     private String firstName;
 
-    @NonNull
+    @Column
     private String lastName;
 
-    @NonNull
+    @Column
     private String email;
 
     @Builder
-    private Employee(String firstName, String lastName, String email) {
+    private Employee(String id, String firstName, String lastName, String email) {
 
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

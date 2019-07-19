@@ -1,4 +1,4 @@
-package com.bespinglobal.demo.jpa.domain;
+package com.bespinglobal.demo.repositories.jpa.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +12,7 @@ import java.time.ZonedDateTime;
 
 /**
  * Project : demo
- * Class : com.bespinglobal.demo.jpa.domain.BaseEntity
+ * Class : com.bespinglobal.demo.repositories.jpa.domain.BaseEntity
  * Version : 2019.07.16 v0.1
  * Created by taehyoung.yim on 2019-07-16.
  * *** 저작권 주의 ***
