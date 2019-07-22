@@ -14,6 +14,8 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
+
+    compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 repositories {
@@ -38,6 +40,9 @@ bootJar {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Undertow
+    implementation 'org.springframework.boot:spring-boot-starter-undertow'
 
     // Mariadb, JPA, Envers
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
