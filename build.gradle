@@ -6,7 +6,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.example'
+group = 'com.bespinglobal.dcos.ic'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -39,20 +39,27 @@ bootJar {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     // Undertow
     implementation 'org.springframework.boot:spring-boot-starter-undertow'
+
+    // AccessLog Filter
+    implementation 'org.apache.commons:commons-lang3:3.9'
+
+    // AOP
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
     // Mariadb, JPA, Envers
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.mariadb.jdbc:mariadb-java-client:2.4.1'
     implementation 'org.springframework.data:spring-data-envers:2.1.8.RELEASE'
     implementation 'org.glassfish.jaxb:jaxb-runtime'
-
-    // Lombok
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
 
     // Zipkin - Log Tracer
     implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:2.1.2.RELEASE'
@@ -61,8 +68,6 @@ dependencies {
 
     // Cassandra
     implementation 'org.springframework.boot:spring-boot-starter-data-cassandra:2.1.6.RELEASE'
-
-    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
